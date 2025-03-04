@@ -82,8 +82,8 @@ const Team = () => {
           <TeamMember
             name="SAGAR KUMAR"
             role="Team Member"
-            image="https://images.unsplash.com/photo-1507003211169-0fc1c8d1c885?auto=format&fit=crop&q=80"
-            linkedin="https://www.linkedin.com/in/sagar-kumar"
+            image="./Team Photos/Sagar.jpg"
+            linkedin="https://www.linkedin.com/in/sagar-kumar-ab5041224/"
             email="sagar.kumar@iic.edu"
           />
           <TeamMember
