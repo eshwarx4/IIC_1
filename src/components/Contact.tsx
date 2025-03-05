@@ -87,7 +87,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center text-gray-400">
                   <Mail className="h-6 w-6 text-blue-500 mr-3" />
-                  <a href="mailto:contact@iic.edu" className="hover:text-white">contact@iic.edu</a>
+                  <a href="mailto:contact@iic.edu" className="hover:text-white">iic.main@gmail.com</a>
                 </div>
                 <div className="flex items-center text-gray-400">
                   <Phone className="h-6 w-6 text-blue-500 mr-3" />
