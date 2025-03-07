@@ -16,6 +16,15 @@ const Navbar = () => {
         { name: 'Mentorship', href: '#mentorship' },
       ]
     },
+    { 
+      name: 'Opportunities', 
+      href: '#opportunities',
+      submenu: [
+        { name: 'Wall of Ideas', href: '#ideas' },
+        { name: 'Internships', href: '#internships' },
+        { name: 'Research Projects', href: '#projects' },
+      ]
+    },
     { name: 'Success Stories', href: '#success-stories' },
     { name: 'Events', href: '#events' },
     { name: 'Team', href: '#team' },
@@ -104,4 +113,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
+export default Navbar;
