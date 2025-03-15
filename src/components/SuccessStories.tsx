@@ -27,20 +27,20 @@ const SuccessCard = ({
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="bg-gray-800 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+      className="bg-gray-200 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
     >
       <div className="h-48 relative">
         <img src={image} alt={name} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-700 to-transparent"></div>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-2">{name}</h3>
-        <p className="text-gray-400 mb-4">{description}</p>
+        <h3 className="text-xl font-bold text-black mb-2">{name}</h3>
+        <p className="text-gray-800 mb-4">{description}</p>
         <div className="flex items-center justify-between text-sm">
-          <span className="text-blue-500">{sector}</span>
+          <span className="text-[#ed502e]">{sector}</span>
           <span className="text-green-500">{funding}</span>
         </div>
-        <a href="#" className="mt-4 inline-flex items-center text-blue-500 hover:text-blue-400">
+        <a href="#" className="mt-4 inline-flex items-center text-[#ed502e] hover:text-blue-400">
           Learn More <ExternalLink className="ml-2 h-4 w-4" />
         </a>
       </div>
@@ -74,11 +74,11 @@ const SuccessStories = () => {
   ];
 
   return (
-    <section id="success-stories" className="py-20 bg-gray-900">
+    <section id="success-stories" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Success Stories</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#ed502e] mb-4">Success Stories</h2>
+          <p className="text-gray-900 max-w-2xl mx-auto">
             Meet the innovative startups that have grown and flourished with our support.
           </p>
         </div>

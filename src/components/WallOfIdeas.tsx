@@ -41,20 +41,20 @@ const ContactModal: React.FC<ContactModalProps> = ({ idea, isOpen, onClose }) =>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: isOpen ? 1 : 0 }}
-      className={`fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 ${
+      className={`fixed inset-0 bg-white/50 backdrop-blur-sm flex items-center justify-center z-50 ${
         !isOpen && 'pointer-events-none'
       }`}
     >
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="bg-gray-800 p-6 rounded-lg w-full max-w-md m-4"
+        className="bg-gray-300 p-6 rounded-lg w-full max-w-md m-4"
       >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-bold text-white">Contact Innovator</h3>
+          <h3 className="text-xl font-bold text-black">Contact Innovator</h3>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-white transition-colors"
+            className="text-gray-700 hover:text-white transition-colors"
           >
             <X className="w-6 h-6" />
           </button>
@@ -68,38 +68,39 @@ const ContactModal: React.FC<ContactModalProps> = ({ idea, isOpen, onClose }) =>
               className="w-12 h-12 rounded-full"
             />
             <div>
-              <h4 className="text-white font-medium">{idea.owner.name}</h4>
-              <p className="text-gray-400 text-sm">{idea.owner.role}</p>
+              <h4 className="text-black font-medium">{idea.owner.name}</h4>
+              <p className="text-gray-700 text-sm">{idea.owner.role}</p>
             </div>
           </div>
-          <p className="text-gray-300 mb-2">Regarding: {idea.title}</p>
+          <p className="text-gray-700 mb-2">Regarding: {idea.title}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-400 mb-2">
+            <label className="block text-sm font-medium text-gray-900 mb-2">
               Your Message
             </label>
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 bg-gray-200 border border-gray-300 rounded-md text-gray-800 placeholder-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
               rows={4}
               placeholder="Write your message here..."
               required
+              // style={{ '--placeholder-color': '#0000' }}
             />
           </div>
           <div className="flex gap-4">
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors"
+              className="flex-1 px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700 transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+              className="flex-1 px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-[#ed502e] transition-colors flex items-center justify-center gap-2"
             >
               <Mail className="w-4 h-4" />
               Send Message
@@ -133,7 +134,7 @@ const IdeaCard: React.FC<{ idea: Idea; onContact: (idea: Idea) => void }> = ({
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="bg-gray-800 rounded-lg p-6 hover:shadow-xl transition-all duration-300"
+      className="bg-gray-200 rounded-lg p-6 hover:shadow-xl transition-all duration-300"
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
@@ -143,23 +144,23 @@ const IdeaCard: React.FC<{ idea: Idea; onContact: (idea: Idea) => void }> = ({
             className="w-10 h-10 rounded-full"
           />
           <div>
-            <h3 className="text-white font-medium">{idea.owner.name}</h3>
-            <p className="text-gray-400 text-sm">{idea.owner.role}</p>
+            <h3 className="text-black font-medium">{idea.owner.name}</h3>
+            <p className="text-gray-800 text-sm">{idea.owner.role}</p>
           </div>
         </div>
-        <span className="px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full text-sm">
+        <span className="px-3 py-1 bg-gray-600/10 text-black rounded-full text-sm">
           {idea.category}
         </span>
       </div>
 
-      <h2 className="text-xl font-bold text-white mb-2">{idea.title}</h2>
-      <p className="text-gray-400 mb-4">{idea.description}</p>
+      <h2 className="text-xl font-bold text-black mb-2">{idea.title}</h2>
+      <p className="text-gray-800 mb-4">{idea.description}</p>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {idea.tags.map((tag, index) => (
           <span
             key={index}
-            className="flex items-center gap-1 px-2 py-1 bg-gray-700/50 text-gray-300 rounded-full text-sm"
+            className="flex items-center gap-1 px-2 py-1 bg-gray-700/50 text-white rounded-full text-sm"
           >
             <Tag className="w-3 h-3" />
             {tag}
@@ -172,20 +173,20 @@ const IdeaCard: React.FC<{ idea: Idea; onContact: (idea: Idea) => void }> = ({
           <button
             onClick={handleLike}
             className={`flex items-center gap-1 transition-colors ${
-              isLiked ? 'text-pink-500' : 'text-gray-400 hover:text-pink-500'
+              isLiked ? 'text-pink-500' : 'text-gray-400 hover:text-red-600'
             }`}
           >
             <Heart className="w-5 h-5" />
             <span>{likes}</span>
           </button>
-          <button className="flex items-center gap-1 text-gray-400 hover:text-blue-500 transition-colors">
+          <button className="flex items-center gap-1 text-gray-400 hover:text-[#ed502e] transition-colors">
             <MessageCircle className="w-5 h-5" />
             <span>Comment</span>
           </button>
         </div>
         <button
           onClick={() => onContact(idea)}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2"
+          className="px-4 py-2 bg-[#ed502e]/80 text-white rounded-lg hover:bg-[#ed502e] transition-colors flex items-center gap-2"
         >
           <Mail className="w-4 h-4" />
           Contact
@@ -264,11 +265,11 @@ const WallOfIdeas: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-900">
+    <section id="ideas" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Wall of Ideas</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#ed502e] mb-4">Wall of Ideas</h2>
+          <p className="text-gray-900 max-w-2xl mx-auto">
             Explore innovative ideas from our community and connect with fellow entrepreneurs
             to bring these visions to life.
           </p>

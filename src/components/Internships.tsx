@@ -26,41 +26,41 @@ const InternshipCard = ({ internship }: { internship: Internship }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="bg-gray-800 rounded-lg p-6 hover:shadow-xl transition-all duration-300"
+      className="bg-gray-200 rounded-lg p-6 hover:shadow-xl transition-all duration-300"
     >
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-xl font-bold text-white mb-2">{internship.role}</h3>
-          <p className="text-blue-500 font-medium">{internship.company}</p>
+          <h3 className="text-xl font-bold text-black mb-2">{internship.role}</h3>
+          <p className="text-gray-700 font-medium">{internship.company}</p>
         </div>
-        <span className="text-gray-400 text-sm">{internship.posted}</span>
+        <span className="text-gray-700 text-sm">{internship.posted}</span>
       </div>
       
       <div className="space-y-3 mb-6">
-        <div className="flex items-center text-gray-400">
+        <div className="flex items-center text-gray-800">
           <MapPin className="w-4 h-4 mr-2" />
           {internship.location}
         </div>
-        <div className="flex items-center text-gray-400">
+        <div className="flex items-center text-gray-800">
           <DollarSign className="w-4 h-4 mr-2" />
           {internship.stipend}
         </div>
-        <div className="flex items-center text-gray-400">
+        <div className="flex items-center text-gray-800">
           <Briefcase className="w-4 h-4 mr-2" />
           {internship.type}
         </div>
       </div>
 
       <div className="mb-6">
-        <h4 className="text-white font-medium mb-2">Requirements:</h4>
-        <ul className="list-disc list-inside text-gray-400 space-y-1">
+        <h4 className="text-black font-medium mb-2">Requirements:</h4>
+        <ul className="list-disc list-inside text-gray-8700 space-y-1">
           {internship.requirements.map((req, index) => (
             <li key={index}>{req}</li>
           ))}
         </ul>
       </div>
 
-      <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+      <button className="w-full bg-[#ed502e]/80 text-white py-2 rounded-lg hover:bg-[#ed502e] transition-colors">
         Apply Now
       </button>
     </motion.div>
@@ -124,40 +124,40 @@ const Internships = () => {
   });
 
   return (
-    <section id="internships" className="py-20 bg-gray-900">
+    <section id="internships" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Internship Opportunities</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#ed502e] mb-4">Internship Opportunities</h2>
+          <p className="text-gray-800 max-w-2xl mx-auto">
             Find exciting internship opportunities with our partner startups and companies.
           </p>
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
           <div className="relative w-full md:w-96">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-800 placeholder-gray-800 w-5 h-5" />
             <input
               type="text"
               placeholder="Search by role or company..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-blue-500"
+              className="w-full pl-10 pr-4 py-2 bg-gray-200 border border-gray-300 rounded-lg text-black focus:outline-none focus:border-black"
             />
           </div>
 
           <div className="flex items-center space-x-4">
-            <Filter className="w-5 h-5 text-blue-500" />
+            <Filter className="w-5 h-5 text-[#ed502e]" />
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              className="bg-gray-800 text-white border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+              className="bg-gray-200 text-black border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-gray-200"
             >
               <option value="All">All Types</option>
               <option value="Full-time">Full-time</option>
               <option value="Part-time">Part-time</option>
             </select>
 
-            <button className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+            <button className="flex items-center px-4 py-2 bg-[#ed502e]/80 text-white rounded-lg hover:bg-[#ed502e] transition-colors">
               <Plus className="w-5 h-5 mr-2" />
               Post Internship
             </button>

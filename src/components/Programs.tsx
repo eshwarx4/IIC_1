@@ -25,15 +25,15 @@ const ProgramCard = ({
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="bg-gray-800 rounded-lg p-8 hover:bg-gray-700 transition-colors duration-300"
+      className="bg-gray-200 rounded-lg p-8 hover:bg-gray-300 transition-colors duration-300"
     >
-      <Icon className="w-12 h-12 text-blue-500 mb-6" />
-      <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-      <p className="text-gray-400 mb-6">{description}</p>
+      <Icon className="w-12 h-12 text-[#ed502e] mb-6" />
+      <h3 className="text-2xl font-bold text-black mb-4">{title}</h3>
+      <p className="text-gray-800 mb-6">{description}</p>
       <ul className="space-y-3">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center text-gray-300">
-            <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+          <li key={index} className="flex items-center text-gray-900">
+            <span className="w-2 h-2 bg-[#ed502e] rounded-full mr-3"></span>
             {feature}
           </li>
         ))}
@@ -44,11 +44,11 @@ const ProgramCard = ({
 
 const Programs = () => {
   return (
-    <section id="programs" className="py-20 bg-gray-900">
+    <section id="programs" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Our Programs</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#ed502e] mb-4">Our Programs</h2>
+          <p className="text-gray-900 max-w-2xl mx-auto">
             Comprehensive support programs designed to nurture and accelerate innovative startups
             at every stage of their journey.
           </p>

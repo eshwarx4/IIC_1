@@ -26,36 +26,36 @@ const EventCard = ({ event }: { event: Event }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
-      className="bg-gray-800 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+      className="bg-gray-200 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
     >
       <div className="h-48 relative">
         <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
-        <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+        <div className="absolute top-4 right-4 bg-gray-200 text-[#ed502e] px-3 py-1 rounded-full text-sm">
           {event.category}
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-3">{event.title}</h3>
-        <p className="text-gray-400 mb-4">{event.description}</p>
+        <h3 className="text-xl font-bold text-black mb-3">{event.title}</h3>
+        <p className="text-gray-700 mb-4">{event.description}</p>
         <div className="space-y-2">
-          <div className="flex items-center text-gray-300">
+          <div className="flex items-center text-gray-700">
             <Calendar className="h-4 w-4 mr-2" />
             <span>{event.date}</span>
           </div>
-          <div className="flex items-center text-gray-300">
+          <div className="flex items-center text-gray-700">
             <Clock className="h-4 w-4 mr-2" />
             <span>{event.time}</span>
           </div>
-          <div className="flex items-center text-gray-300">
+          <div className="flex items-center text-gray-700">
             <MapPin className="h-4 w-4 mr-2" />
             <span>{event.location}</span>
           </div>
-          <div className="flex items-center text-gray-300">
+          <div className="flex items-center text-gray-700">
             <Users className="h-4 w-4 mr-2" />
             <span>{event.attendees} Attendees</span>
           </div>
         </div>
-        <button className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg flex items-center justify-center transition-colors duration-300">
+        <button className="mt-6 w-full bg-[#ed502e]/80 hover:bg-[#ed502e] text-white py-2 px-4 rounded-lg flex items-center justify-center transition-colors duration-300">
           Register Now
           <ArrowRight className="ml-2 h-4 w-4" />
         </button>
@@ -122,17 +122,17 @@ const Events = () => {
   ];
 
   return (
-    <section id="events" className="py-20 bg-gray-900">
+    <section id="events" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Events & Programs</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#ed502e] mb-4">Events & Programs</h2>
+          <p className="text-gray-800 max-w-2xl mx-auto">
             Join our community events and programs designed to support and accelerate your entrepreneurial journey.
           </p>
         </div>
 
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-white mb-8">Upcoming Events</h3>
+          <h3 className="text-2xl font-bold text-black mb-8">Upcoming Events</h3>
           <div className="grid md:grid-cols-3 gap-8">
             {upcomingEvents.map((event, index) => (
               <EventCard key={index} event={event} />
@@ -141,7 +141,7 @@ const Events = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-bold text-white mb-8">Past Events</h3>
+          <h3 className="text-2xl font-bold text-black mb-8">Past Events</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {pastEvents.map((event, index) => (
               <EventCard key={index} event={event} />
